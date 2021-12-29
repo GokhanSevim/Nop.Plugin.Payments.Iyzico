@@ -5,9 +5,9 @@
     <Copyright>Copyright © Silver Bilgi Teknolojileri</Copyright>
     <Company>Silver BT, Ltd</Company>
     <Authors>Gökhan SEVİM</Authors>
-    <PackageLicenseUrl></PackageLicenseUrl>
-    <PackageProjectUrl>https://www.silverteknoloji.com.tr/</PackageProjectUrl>
-    <RepositoryUrl>https://www.silverteknoloji.com.tr/</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/GokhanSevim/Nop.Plugin.Payments.Iyzico/blob/main/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://download.silverteknoloji.com.tr/nopcommerce/v440/Payments.Iyzico.zip</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/GokhanSevim/Nop.Plugin.Payments.Iyzico</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <OutputPath>..\..\Presentation\Nop.Web\Plugins\Payments.Iyzico</OutputPath>
     <OutDir>$(OutputPath)</OutDir>
