@@ -164,6 +164,17 @@ namespace Nop.Plugin.Payments.Iyzico
                 EnabledInstallments = _iyzicoPaymentSettings.InstallmentNumbers
             };
 
+            if (string.IsNullOrEmpty(request.Buyer.Name))
+            {
+                request.Buyer.Name = shippingAddress.FirstName;
+                request.Buyer.Surname = shippingAddress.LastName;
+            }
+
+            if (string.IsNullOrEmpty(request.Buyer.Email))
+            {
+                request.Buyer.Email = shippingAddress.Email;
+            }
+
             CheckoutFormInitialize payment = CheckoutFormInitialize.Create(request, IyzicoHelper.GetOptions(_iyzicoPaymentSettings));
 
             var result = new ProcessPaymentResult
