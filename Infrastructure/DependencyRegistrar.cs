@@ -12,7 +12,6 @@ namespace Nop.Plugin.Payments.Iyzico.Infrastructure
     {
         public virtual void Register(IServiceCollection services, ITypeFinder typeFinder, AppSettings appSettings)
         {
-            services.AddScoped<PaymentIyzicoController>();
             services.AddScoped<IPaymentIyzicoService, PaymentIyzicoService>();
         }
 
