@@ -242,7 +242,7 @@ namespace Nop.Plugin.Payments.Iyzico
             {
                 var product = _productService.GetProductByIdAsync(sci.ProductId).Result;
                 var price = IyzicoHelper.ToDecimalInvariant(_shoppingCartService.GetUnitPriceAsync(sci, true).Result.unitPrice);
-                var shoppingCartUnitPriceWithDiscountBase = _taxService.GetProductPriceAsync(product, price);
+                var shoppingCartUnitPriceWithDiscountBase = _taxService.GetProductPriceAsync(product, price, true, customer);
                 var shoppingCartUnitPriceWithDiscount = _currencyService.ConvertFromPrimaryStoreCurrencyAsync(shoppingCartUnitPriceWithDiscountBase.Result.price, _workContext.GetWorkingCurrencyAsync().Result);
 
                 return createItem(shoppingCartUnitPriceWithDiscount.Result * sci.Quantity,
