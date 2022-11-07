@@ -2,7 +2,7 @@
   "Group": "Payment methods",
   "FriendlyName": "Iyzico",
   "SystemName": "Payments.Iyzico",
-  "Version": "1.00",
+  "Version": "1.02",
   "SupportedVersions": [ "4.40" ],
   "Author": "Silver Bilgi Teknolojileri | silverteknoloji.com.tr",
   "DisplayOrder": 1,

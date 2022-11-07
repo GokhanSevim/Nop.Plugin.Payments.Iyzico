@@ -1,33 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Iyzipay;
-using Iyzipay.Model;
+﻿using Iyzipay.Model;
 using Iyzipay.Request;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.WebUtilities;
+using Newtonsoft.Json;
 using Nop.Core;
+using Nop.Core.Domain.Directory;
 using Nop.Core.Domain.Orders;
-using Nop.Core.Domain.Payments;
-using Nop.Plugin.Payments.Iyzico.Models;
-using Nop.Plugin.Payments.Iyzico.Validators;
+using Nop.Plugin.Payments.Iyzico.Services;
+using Nop.Services.Catalog;
+using Nop.Services.Common;
 using Nop.Services.Configuration;
+using Nop.Services.Customers;
+using Nop.Services.Directory;
 using Nop.Services.Localization;
 using Nop.Services.Orders;
 using Nop.Services.Payments;
 using Nop.Services.Plugins;
-using Nop.Services.Logging;
-using Nop.Services.Customers;
-using Newtonsoft.Json;
-using Nop.Plugin.Payments.Iyzico.Services;
-using Nop.Services.Catalog;
-using System.Globalization;
-using Nop.Services.Common;
 using Nop.Services.Tax;
-using Nop.Services.Directory;
-using Nop.Core.Domain.Directory;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Nop.Plugin.Payments.Iyzico
 {
@@ -136,7 +129,7 @@ namespace Nop.Plugin.Payments.Iyzico
             if (billingAddress == null)
                 throw new NopException("Müşteri fatura adresi ayarlanmadı!");
 
-            var shippingAddress = await _addressService.GetAddressByIdAsync(customer.ShippingAddressId ?? 0);
+            var shippingAddress = await _addressService.GetAddressByIdAsync(customer.ShippingAddressId ?? customer.BillingAddressId ?? 0);
             if (shippingAddress == null)
                 throw new NopException("Müşteri teslimat adresi ayarlanmadı!");
 
