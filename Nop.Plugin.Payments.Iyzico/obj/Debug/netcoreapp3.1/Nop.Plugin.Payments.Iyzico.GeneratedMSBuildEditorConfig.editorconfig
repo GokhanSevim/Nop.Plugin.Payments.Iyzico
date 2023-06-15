@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = Nop.Plugin.Payments.Iyzico
+build_property.ProjectDir = D:\repos\nopCommerce_4.30_Source\Plugins\Nop.Plugin.Payments.Iyzico\
